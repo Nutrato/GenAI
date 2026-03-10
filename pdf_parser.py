@@ -4,12 +4,12 @@ from PyPDF2 import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
-
+import os
 # Suppress the warning when running in development
 import warnings
 warnings.filterwarnings("ignore", message=".*missing ScriptRunContext.*")
 
-key = "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"
+key = os.environ.get("GROQ_API_KEY")
 
 st.header("PDF Text Extractor")
 
